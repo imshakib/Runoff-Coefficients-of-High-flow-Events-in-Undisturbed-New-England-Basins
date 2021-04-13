@@ -37,6 +37,7 @@ library(dplyr)
 library(htmlwidgets)
 library(webshot)
 library(beepr)
+library(rstudioapi)
 
 # Set working directory to source file location
 wd=setwd(dirname(getActiveDocumentContext()$path)) 
