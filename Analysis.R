@@ -1,6 +1,6 @@
 ##==============================================================================
 ##
-## Script performs all the analysis required for the paper:
+## Script performs the analysis required for the paper:
 ## "Runoff Coefficients of High-flow Events in Undisturbed New England Basins"
 ## by Hosseini-Shakib et al.(2020)
 ##
@@ -179,7 +179,7 @@ for (f in 1:nstations) {
       
       
       
-      iman <- highchart() %>%
+      chart <- highchart() %>%
               hc_yAxis_multiples(list(
          title = list(text = "rainfall (MCM)"),
          reversed = TRUE
@@ -206,7 +206,7 @@ for (f in 1:nstations) {
        hc_xAxis(categories = xaxis_date, title = list(text = "date"))
       
       setwd(path)
-      saveWidget(widget = iman,
+      saveWidget(widget = chart,
                 file = paste0("station ", f, " flood ", x[i], ".html"))
       webshot(
         url = paste0("station ", f, " flood ", x[i], ".html"),
