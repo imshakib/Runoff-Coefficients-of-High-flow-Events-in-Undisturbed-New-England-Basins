@@ -53,7 +53,8 @@ Sfolder=paste0(wd,"/Input_Data/snow_water-equivalent/") #directory of snow water
 Tfolder=paste0(wd,"/Input_Data/temperature/") #directory of temperature timeseries
 PRfolder = paste0(wd,"/Input_Data/precip_runoff/") #directory of precipitation & runoff timeseries
 RPfolder = paste0(wd,"/Input_Data/") #directory of 2, 5 and 10 yr floods of stations
-OUTPUTfolder = dir.create(paste0(wd,"/Output/")) #directory of outputs
+OUTPUTfolder = paste0(wd,"/Output/") #directory of outputs
+dir.create(OUTPUTfolder)
 
 RP = read.csv(paste0(RPfolder, "PeakFlowStatistics.csv")) #flood frequency of stations
 USGS = as.character(paste0("0",RP$USGS.Gage.Station.Number))
